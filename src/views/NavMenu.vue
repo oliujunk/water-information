@@ -1,14 +1,16 @@
 <template>
   <div class="nav-menu">
-    <div class="title">绥滨农业水价综合改革管理系统</div>
+    <div class="title">桦南灌区综合管理系统</div>
     <div class="menu">
-      <div class="menu-item" :class="{'current-menu-item':path === '/map'}" @click="handleSelect('/map')">一张图</div>
-      <div class="menu-item" :class="{'current-menu-item':path === '/basic'}" @click="handleSelect('/basic')">基本信息</div>
-      <div class="menu-item" :class="{'current-menu-item':path === '/management'}" @click="handleSelect('/management')">管理指标</div>
-      <div class="menu-item" :class="{'current-menu-item':path === '/effect'}" @click="handleSelect('/effect')">运行效果</div>
-      <div class="menu-item" :class="{'current-menu-item':path === '/water'}" @click="handleSelect('/water')">用水管理</div>
-      <div class="menu-item" :class="{'current-menu-item':path === '/performance'}" @click="handleSelect('/performance')">绩效考核</div>
-      <div class="menu-item" :class="{'current-menu-item':path === '/report'}" @click="handleSelect('/report')">年度报告</div>
+      <div class="menu-item" :class="{'current-menu-item':path === '/station'}" @click="handleSelect('/station')">监测站点管理</div>
+      <div class="menu-item" :class="{'current-menu-item':path === '/data'}" @click="handleSelect('/data')">实时数据监测</div>
+      <div class="menu-item" :class="{'current-menu-item':path === '/map'}" @click="handleSelect('/map')">GIS实时监测</div>
+      <div class="menu-item" :class="{'current-menu-item':path === '/video'}" @click="handleSelect('/video')">实时视频监控</div>
+      <div class="menu-item" :class="{'current-menu-item':path === '/input'}" @click="handleSelect('/input')">人工置数</div>
+      <div class="menu-item" :class="{'current-menu-item':path === '/search'}" @click="handleSelect('/search')">数据查询</div>
+      <div class="menu-item" :class="{'current-menu-item':path === '/statistic'}" @click="handleSelect('/statistic')">数据统计</div>
+      <div class="menu-item" :class="{'current-menu-item':path === '/push'}" @click="handleSelect('/push')">定时预警推送</div>
+      <div class="menu-item" :class="{'current-menu-item':path === '/warning'}" @click="handleSelect('/warning')">预警管理</div>
     </div>
     <div class="user-dropdown">
       <i class="el-icon-user-solid"></i>

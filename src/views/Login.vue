@@ -6,8 +6,7 @@
     <div class="login-window">
       <div class="login-form">
         <div>
-          <h2 style="text-align: left; margin-left: 20px;">绥滨熬來灌区</h2>
-          <h2 style="text-align: right; margin-right: 20px;">农业水价综合改革管理系统</h2>
+          <h2 style="text-align: center;">桦南灌区综合管理系统</h2>
         </div>
         <div>
           <el-input
@@ -21,6 +20,7 @@
             show-password
             placeholder="请输入密码"
             v-model="loginForm.password"
+            @keyup.enter.native="handleLogin"
             style="margin: 10% 10% 0 10%; width: 80%;"
           >
             <i slot="prefix" class="el-input__icon el-icon-unlock"></i>

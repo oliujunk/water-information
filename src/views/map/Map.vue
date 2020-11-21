@@ -52,7 +52,7 @@ export default {
     const map = new AMap.Map('map', {
       resizeEnable: true,
       zoom: 12,
-      center: [131.860065, 47.296635],
+      center: [130.553343, 46.239185],
       lang: 'zh_cn',
     });
     AMap.plugin(['AMap.ToolBar', 'AMap.Scale', 'AMap.DistrictSearch'], () => {
@@ -108,7 +108,7 @@ export default {
       level: 'district',
     });
 
-    district.search('绥滨县', (status, result) => {
+    district.search('桦南县', (status, result) => {
       const bounds = result.districtList[0].boundaries;
       const polygons = [];
       if (bounds) {
