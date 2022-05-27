@@ -10,11 +10,14 @@
       :collapse-transition="false"
       style="height: 100%; border: 0;"
     >
-      <el-menu-item index="/effect/page1" @click="$router.push('/effect/page1')">
-        <span slot="title">综合监控</span>
-      </el-menu-item>
-      <el-menu-item index="/effect/page2" @click="$router.push('/effect/page2')">
+      <el-menu-item index="/effect/data" @click="$router.push('/effect/data')">
         <span slot="title">实时监测</span>
+      </el-menu-item>
+      <el-menu-item index="/effect/video" @click="$router.push('/effect/video')">
+        <span slot="title">视频监控</span>
+      </el-menu-item>
+      <el-menu-item index="/effect/GIS" @click="$router.push('/effect/GIS')">
+        <span slot="title">G I S</span>
       </el-menu-item>
     </el-menu>
   </div>

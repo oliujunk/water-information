@@ -69,10 +69,11 @@ const routes = [
       {
         path: '/effect',
         component: () => import('@/views/effect/Effect.vue'),
-        redirect: '/effect/page1',
+        redirect: '/effect/data',
         children: [
-          { path: '/effect/page1', component: () => import('@/views/effect/Page1.vue') },
-          { path: '/effect/page2', component: () => import('@/views/effect/Page2.vue') },
+          { path: '/effect/data', component: () => import('@/views/effect/Data.vue') },
+          { path: '/effect/video', component: () => import('@/views/effect/Video.vue') },
+          { path: '/effect/GIS', component: () => import('@/views/effect/GIS.vue') },
         ],
       },
       {

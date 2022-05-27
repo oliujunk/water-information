@@ -16,5 +16,9 @@ module.exports = {
     'max-len': ['error', 200],
     'no-param-reassign': 'off',
     'no-undef': 'off',
+    'no-multi-assign': 'off',
+    'prefer-destructuring': 'off',
+    'no-bitwise': 'off',
+    'no-continue': 'off',
   },
 };

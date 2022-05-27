@@ -50,12 +50,24 @@ export default {
   },
   methods: {
     handleLogin() {
-      if (this.loginForm.username === 'test' && this.loginForm.password === '123456') {
-        sessionStorage.setItem('logined', true);
-        sessionStorage.setItem('username', this.loginForm.username);
-        this.$store.commit('username', { username: this.loginForm.username });
-        this.$router.push('/');
-      }
+      this.logining = true;
+      this.$http
+        .post('/login', {
+          username: this.loginForm.username,
+          password: this.loginForm.password,
+        })
+        .then((response) => {
+          if (response.data.token) {
+            sessionStorage.setItem('logined', true);
+            sessionStorage.setItem('username', this.loginForm.username);
+            sessionStorage.setItem('password', this.loginForm.password);
+            sessionStorage.setItem('token', response.data.token);
+            this.$router.push('/');
+          } else {
+            this.$message.error('登录失败');
+          }
+          this.logining = false;
+        });
     },
   },
 };
