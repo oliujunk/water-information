@@ -73,7 +73,7 @@ export default {
 
     const markerIcon = new AMap.Icon({
       size: new AMap.Size(50, 50),
-      image: `http://${this.$HOST}:8081/images/onstage/location.png`,
+      image: `http://${this.$HOST}:5503/images/onstage/location.png`,
       imageSize: new AMap.Size(50, 50),
     });
 

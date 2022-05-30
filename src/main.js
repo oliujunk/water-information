@@ -26,13 +26,13 @@ let host = '';
 const isProduction = process.env.NODE_ENV === 'production';
 
 if (isProduction) {
-  host = '59.110.22.67';
+  host = '1.56.79.203';
 } else {
   host = 'localhost';
-  host = '59.110.22.67';
+  host = '1.56.79.203';
 }
 
-const API_BASE_URL = `http://${host}:8005`;
+const API_BASE_URL = `http://${host}:5504`;
 
 axios.defaults.baseURL = API_BASE_URL;
 
