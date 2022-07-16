@@ -17,7 +17,7 @@
                     controls
                     preload="auto"
                     autoplay
-                    :poster="`http://${$HOST}:5503/images/摄像机.jpg`"
+                    :poster="`http://${$HOST}:8081/images/摄像机.jpg`"
                   >
                     <source :src="video.address" type="application/x-mpegURL">
                   </video>

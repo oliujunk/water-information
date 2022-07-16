@@ -23,7 +23,7 @@
                     :body-style="cardStyle()"
                   >
                     <div>
-                      <img :src="`http://${$HOST}:5503/images/onstage/element/${item.index}.png`" class="image">
+                      <img :src="`http://${$HOST}:8081/images/onstage/element/${item.index}.png`" class="image">
                     </div>
                     <div style="width: 100%; text-align: center; color: white;">
                       <span class="element-name">{{ item.name }}</span>
@@ -52,7 +52,7 @@
               <div class="device-information">
                 <el-card :body-style="{ padding: '0px' }" class="device-cover">
                   <img v-if="device && device.coverUrl" :src="device.coverUrl">
-                  <img v-else :src="`http://${$HOST}:5503/images/onstage/login_bg.jpg`">
+                  <img v-else :src="`http://${$HOST}:8081/images/onstage/login_bg.jpg`">
                   <div style="display: flex; padding-left: 10px; justify-content: space-between;">
                     <div>
                       <div style="text-align: left;" v-if="device">{{'设备名称: '}}{{ device.facName }}</div>
@@ -89,7 +89,7 @@
                   element-loading-spinner="el-icon-loading"
                   element-loading-background="rgba(0, 0, 0, 0.8)"
                 >
-                  <img :src="`http://${$HOST}:5503/images/onstage/element/${item.index}.png`" class="image">
+                  <img :src="`http://${$HOST}:8081/images/onstage/element/${item.index}.png`" class="image">
                   {{ item.name }}
                   <br>
                   <el-switch

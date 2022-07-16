@@ -11,7 +11,7 @@
       style="height: 100%; border: 0;"
     >
       <el-menu-item index="/water/page1" @click="$router.push('/water/page1')">
-        <span slot="title">流速仪实测</span>
+        <span slot="title">年度用水量</span>
       </el-menu-item>
       <el-menu-item index="/water/page2" @click="$router.push('/water/page2')">
         <span slot="title">水位流量关系</span>

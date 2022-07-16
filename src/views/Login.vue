@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="qrcode">
-      <img src="http://1.56.79.203:5503/images/app/qrcode.png" alt="二维码" style="height: 120px; width: 120px;">
+      <img src="http://59.110.22.67:8081/images/app/qrcode.png" alt="二维码" style="height: 120px; width: 120px;">
     </div>
     <div class="login-window">
       <div class="login-form">
