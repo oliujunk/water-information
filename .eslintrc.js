@@ -20,5 +20,6 @@ module.exports = {
     'prefer-destructuring': 'off',
     'no-bitwise': 'off',
     'no-continue': 'off',
+    'no-mixed-operators': 'off',
   },
 };

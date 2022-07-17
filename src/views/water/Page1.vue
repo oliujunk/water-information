@@ -36,30 +36,30 @@
       <vxe-table-column type="seq" width="60"></vxe-table-column>
       <vxe-table-column field="name" title="渠道名称"></vxe-table-column>
       <vxe-table-column field="area" title="灌溉面积(亩)"></vxe-table-column>
-      <vxe-table-column field="avg" title="亩均用水范围(立方米)"></vxe-table-column>
+      <!-- <vxe-table-column field="avg" title="亩均用水范围(立方米)"></vxe-table-column> -->
       <vxe-table-column field="sum" title="合计">
         <template v-slot="{ row }">
           <span>{{ row.area * row.avg}}</span>
         </template>
       </vxe-table-column>
-      <vxe-table-column field="5" title="5月放水比例(40%)">
+      <vxe-table-column field="5" title="5月份流量(m3)">
         <template v-slot="{ row }">
           <span>{{ row.area * row.avg * 0.4}}</span>
         </template>
       </vxe-table-column>
-      <vxe-table-column field="6" title="6月放水比例(25%)">
+      <vxe-table-column field="6" title="6月份流量(m3)">
         <template v-slot="{ row }">
           <span>{{ row.area * row.avg * 0.25}}</span>
         </template>
       </vxe-table-column>
-      <vxe-table-column field="7" title="7月放水比例(25%)">
+      <vxe-table-column field="7" title="7月份流量(m3)">
         <template v-slot="{ row }">
-          <span>{{ row.area * row.avg * 0.25}}</span>
+          <span>{{ (row.area * row.avg * 0.25 * dayjs().date() / 31).toFixed(2)}}</span>
         </template>
       </vxe-table-column>
-      <vxe-table-column field="8" title="8月放水比例(10%)">
+      <vxe-table-column field="8" title="8月份流量(m3)">
         <template v-slot="{ row }">
-          <span>{{ row.area * row.avg * 0.1}}</span>
+          <span>{{ row.area * row.avg * 0.1 * 0}}</span>
         </template>
       </vxe-table-column>
       <vxe-table-column title="操作" width="200">
@@ -91,6 +91,7 @@ export default {
 
   data() {
     return {
+      dayjs,
       searchContent: '',
       pageSize: 10,
       currentPage: 1,
@@ -126,6 +127,10 @@ export default {
     };
   },
 
+  mounted() {
+    console.log(dayjs().date());
+  },
+
   methods: {
     handleExport() {
       this.$refs.table.exportData({
@@ -136,8 +141,8 @@ export default {
           item.sum = item.area * item.avg;
           item['5'] = item.sum * 0.4;
           item['6'] = item.sum * 0.25;
-          item['7'] = item.sum * 0.25;
-          item['8'] = item.sum * 0.1;
+          item['7'] = (item.sum * 0.25 * dayjs().date() / 31).toFixed(2);
+          item['8'] = item.sum * 0.1 * 0;
           return item;
         }),
       });
@@ -194,15 +199,15 @@ export default {
             case '7': {
               let sum = 0;
               data.forEach((item) => {
-                sum += item.area * item.avg * 0.25;
+                sum += (item.area * item.avg * 0.25 * dayjs().date() / 31);
               });
-              sumCell = sum;
+              sumCell = sum.toFixed(2);
               break;
             }
             case '8': {
               let sum = 0;
               data.forEach((item) => {
-                sum += item.area * item.avg * 0.1;
+                sum += item.area * item.avg * 0.1 * 0;
               });
               sumCell = sum;
               break;
